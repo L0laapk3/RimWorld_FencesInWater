@@ -6,4 +6,6 @@ Obviously, requires Fences And Floors to be before this mod in the mod order lis
 ###Download
 [Github Download Link](https://github.com/L0laapk3/RimWorld_FencesInWater/releases)
 
+Big credit for Pravus (authur of Fences And Floors) for basically everything, I just made some minor tweaks.
+
 License: [Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See LICENSE file for details.
