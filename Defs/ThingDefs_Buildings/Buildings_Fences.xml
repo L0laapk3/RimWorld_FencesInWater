@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef Name="FencesAFBuildingBaseWater" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>BuildingRubble</filthLeaving>
+	<terrainAffordanceNeeded>Undefined</terrainAffordanceNeeded>
+    <holdsRoof>false</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="FencesAFBuildingBaseWater" Name="FencesAFDoorBaseWater" Abstract="True">
+    <thingClass>Building_Door</thingClass>
+    <blueprintClass>Blueprint_Door</blueprintClass>
+    <category>Building</category>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Door/Door_Blueprint</texPath>
+    </blueprintGraphicData>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <designationCategory>Structure</designationCategory>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+      <soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
+      <soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
+      <soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+      <soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+  
+<!--========================= Farm Fence =============================-->
+  
+  <ThingDef ParentName="FencesAFBuildingBaseWater">
+    <defName>WoodFenceWater</defName>
+    <label>Wood fence (Water)</label>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <description>A good, old fashioned wooden fence.</description>
+    <graphicData>
+      <texPath>Things/Building/Fences/WoodFence</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom1</li>
+      </linkFlags>
+    </graphicData>	
+    <uiIconPath>Things/Building/Fences/WoodFenceIco</uiIconPath>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Fences/WoodFenceBlueprint</texPath>
+    </blueprintGraphicData>
+		<costStuffCount>2</costStuffCount>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>250</WorkToBuild>
+			<Flammability>1</Flammability>
+		</statBases>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.35</fillPercent>
+    <coversFloor>false</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <designationCategory>Fences</designationCategory>
+    <blockLight>false</blockLight>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+<!--========================= Farm Gate =============================-->  
+  
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>WoodFenceGateWater</defName>
+    <label>Wood fence gate (Water)</label>
+    <description>A good, old fashioned wooden fence gate.</description>
+	<stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+	<fillPercent>0.35</fillPercent>
+    <statBases>
+	  <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>450</WorkToBuild>
+	  <Flammability>1.0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Fences/WoodFenceGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <linkFlags>
+        <li>Custom1</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>		
+    <uiIconPath>Things/Building/Fences/WoodFenceGateIco</uiIconPath>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/WoodFenceGate_Blueprint</texPath>
+    </blueprintGraphicData>
+    <costStuffCount>10</costStuffCount>
+	<designationCategory>Fences</designationCategory>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>  
+  
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>WoodFenceGateBWater</defName>
+    <label>Wood fence gate (Water)</label>
+    <description>A good, old fashioned wooden fence gate.</description>
+	<stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+	<fillPercent>0.35</fillPercent>
+    <statBases>
+	  <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>450</WorkToBuild>
+	  <Flammability>1.0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Fences/WoodFenceGateB_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <linkFlags>
+        <li>Custom1</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>		
+    <uiIconPath>Things/Building/Fences/WoodFenceGateBIco</uiIconPath>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/WoodFenceGateB_Blueprint</texPath>
+    </blueprintGraphicData>
+    <costStuffCount>10</costStuffCount>
+	<designationCategory>Fences</designationCategory>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+  
+<!--========================= Chainlink Fence =============================-->  
+  
+  <ThingDef ParentName="FencesAFBuildingBaseWater">
+		<defName>ChainFenceWater</defName>
+		<label>Chainlink fence (Water)</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+		<linkType>Basic</linkType>
+		 <texPath>Things/Building/Fences/ChainFence</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<linkFlags>
+          <li>Custom2</li>
+        </linkFlags>
+		</graphicData>
+		<description>A sturdy steel fence made of interwoven steel wire.</description>
+		<uiIconPath>Things/Building/Fences/ChainFenceIco</uiIconPath>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>0.0</Flammability>
+    </statBases>
+	<costList>
+			<Steel>5</Steel>
+	</costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.15</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+	<blockLight>false</blockLight>
+        <designationCategory>Fences</designationCategory>
+    <building>
+      <isInert>true</isInert>
+    </building>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+	</ThingDef>
+
+<!--========================= Chainlink Gate =============================-->  
+  
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>ChainFenceGateWater</defName>
+    <label>Chainlink fence gate (Water)</label>
+    <description>A sturdy steel fence gate made of interwoven steel wire.</description>
+	<fillPercent>0.15</fillPercent>
+    <statBases>
+	  <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+	  <Flammability>0</Flammability>
+    </statBases>
+	<costList>
+			<Steel>10</Steel>
+	</costList>
+    <graphicData>
+      <texPath>Things/Building/Fences/ChainFenceGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <linkFlags>
+        <li>Custom2</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+	<designationCategory>Fences</designationCategory>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/ChainFenceGate_Blueprint</texPath>
+    </blueprintGraphicData>	
+    <uiIconPath>Things/Building/Fences/ChainFenceGateIco</uiIconPath>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>ChainFenceGateBWater</defName>
+    <label>Chainlink fence gate (Water)</label>
+    <description>A sturdy steel fence gate made of interwoven steel wire.</description>
+	<fillPercent>0.15</fillPercent>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+	  <Flammability>0</Flammability>
+    </statBases>
+	<costList>
+			<Steel>10</Steel>
+	</costList>
+    <graphicData>
+      <texPath>Things/Building/Fences/ChainFenceGateB_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <linkFlags>
+        <li>Custom2</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+	<designationCategory>Fences</designationCategory>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/ChainFenceGateB_Blueprint</texPath>
+    </blueprintGraphicData>	
+    <uiIconPath>Things/Building/Fences/ChainFenceGateBIco</uiIconPath>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+  </ThingDef>  
+  
+<!--========================= High Security Fence =============================-->
+	
+	<ThingDef ParentName="FencesAFBuildingBaseWater">
+		<defName>TechFenceWater</defName>
+		<label>High security fence (Water)</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+		<linkType>Basic</linkType>
+		 <texPath>Things/Building/Fences/TechFence</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>CutoutComplex</shaderType>
+		<linkFlags>
+          <li>Custom3</li>
+        </linkFlags>
+		</graphicData>
+		<description>A tall, metal fence topped with razor wire.</description>
+		<uiIconPath>Things/Building/Fences/TechFenceIco</uiIconPath>
+    <statBases>
+      <MaxHitPoints>850</MaxHitPoints>
+      <WorkToBuild>700</WorkToBuild>
+      <Flammability>0.0</Flammability>
+    </statBases>
+	<costList>
+			<Steel>8</Steel>
+	</costList>
+    <costStuffCount>12</costStuffCount>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+	<castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <designationCategory>Fences</designationCategory>
+	<staticSunShadowHeight>0.73</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+    </building>
+	<damageMultipliers>
+	  <li>
+		<damageDef>Bomb</damageDef>
+		<multiplier>3</multiplier>
+	  </li>
+	</damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+	</ThingDef>	
+
+<!--========================= High Security Gate =============================-->  
+  
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>TechFenceGateWater</defName>
+    <label>High security fence gate (Water)</label>
+    <description>A tall, metal security gate.</description>
+	<fillPercent>0.9</fillPercent>
+	<castEdgeShadows>true</castEdgeShadows>
+	<staticSunShadowHeight>0.73</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+	  <MaxHitPoints>750</MaxHitPoints>
+	  <Flammability>0</Flammability>
+    </statBases>
+	<costStuffCount>20</costStuffCount>
+	<costList>
+			<Steel>15</Steel>
+	</costList>
+    <graphicData>
+      <texPath>Things/Building/Fences/TechFenceGate_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+	  <linkFlags>
+        <li>Custom3</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>		
+    <uiIconPath>Things/Building/Fences/TechFenceGateIco</uiIconPath>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/TechFenceGate_Blueprint</texPath>
+    </blueprintGraphicData>
+	<designationCategory>Fences</designationCategory>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="FencesAFDoorBaseWater">
+    <defName>TechFenceGateBWater</defName>
+    <label>High security fence gate (Water)</label>
+    <description>A tall, metal security gate.</description>
+	<fillPercent>0.9</fillPercent>
+	<castEdgeShadows>true</castEdgeShadows>
+	<staticSunShadowHeight>0.73</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+	  <MaxHitPoints>750</MaxHitPoints>
+	  <Flammability>0</Flammability>
+    </statBases>
+	<costStuffCount>20</costStuffCount>
+	<costList>
+			<Steel>15</Steel>
+	</costList>
+    <graphicData>
+      <texPath>Things/Building/Fences/TechFenceGateB_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+	  <linkFlags>
+        <li>Custom3</li>
+      </linkFlags>
+	  <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>		
+    <uiIconPath>Things/Building/Fences/TechFenceGateBIco</uiIconPath>
+	<blueprintGraphicData>
+      <texPath>Things/Building/Fences/TechFenceGateB_Blueprint</texPath>
+    </blueprintGraphicData>
+	<designationCategory>Fences</designationCategory>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+	<damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>3</multiplier>
+      </li>
+    </damageMultipliers>
+	<researchPrerequisites><li>Machining</li></researchPrerequisites>
+  </ThingDef>
+  
+<!--========================= Waist High Barrier =============================-->
+	
+	<ThingDef ParentName="FencesAFBuildingBaseWater">
+		<defName>SecurityBarrierWater</defName>
+		<label>Security barrier (Water)</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<description>A waist high security barrier designed to provide emergency cover in a combat situation.</description>
+		 <graphicData>
+		<linkType>Basic</linkType>
+		 <texPath>Things/Building/Fences/Barrier</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		 <linkFlags>
+        <li>Custom4</li>
+      </linkFlags>
+		 </graphicData>
+		 <uiIconPath>Things/Building/Fences/BarrierIco</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<pathCost>75</pathCost>
+		<passability>PassThroughOnly</passability>
+		<statBases>
+			<MaxHitPoints>850</MaxHitPoints>
+			<WorkToBuild>400</WorkToBuild>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<fillPercent>0.65</fillPercent>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>12</Steel>
+		</costList>
+		<selectable>true</selectable>
+		    <designationCategory>Security</designationCategory>
+		<researchPrerequisites><li>Machining</li></researchPrerequisites>
+	</ThingDef>
+
+</Defs>
